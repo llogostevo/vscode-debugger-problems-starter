@@ -9,7 +9,9 @@ of foods that you have fed that pet.
 function feedPet(name) {
   const foods = [];
   return (food) => {
-    return "Fed " + name + " " + foods.push(food) + ".";
+    foods.push(food);
+    let foodString = foods.reduce((currentValue, previousValue) => currentValue+", "+previousValue)
+    return "Fed " + name + " " + foodString + ".";
   }
 }
 
